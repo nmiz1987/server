@@ -21,18 +21,6 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/news', async (req, res) => {
-  const url = 'https://newsapi.org/v2/top-headlines?country=il&category=technology&apiKey=13d5500121e54393b43e2584e93a6f72'
-try{
-  const res = await fetch(url);
-  const obj = await res.json();
-  res.status(201).json(obj)
-}
-catch (err){
-  res.status(400).json( { message: err.message})
-}
-  res.render('index')
-})
 
 
 app.get('/todo', (req, res) => {
